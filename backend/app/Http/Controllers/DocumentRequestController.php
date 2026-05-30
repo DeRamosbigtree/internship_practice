@@ -12,7 +12,7 @@ class DocumentRequestController extends Controller
      */
     public function index()
     {
-        //
+        return DocumentRequest::latest()->get();
     }
 
     /**
