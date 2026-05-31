@@ -30,7 +30,7 @@ class DocumentRequestController extends Controller
     {
         $validated = $request->validate([
             'student_name' => 'required|string|max:255',
-            'doucment_type' => 'required|string|max:255',
+            'document_type' => 'required|string|max:255',
             'purpose' => 'nullable|string',
         ]);
 
