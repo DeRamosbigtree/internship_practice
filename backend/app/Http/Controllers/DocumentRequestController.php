@@ -28,7 +28,14 @@ class DocumentRequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'student_name' => 'required|string|max:255',
+            'doucment_type' => 'required|string|max:255',
+            'purpose' => 'nullable|string',
+        ]);
+
+        $documentRequest = DocumentRequest::create($validated);
+        return response()->json(['message' => 'Document request created successfully', 'data' => $documentRequest], 201);
     }
 
     /**
