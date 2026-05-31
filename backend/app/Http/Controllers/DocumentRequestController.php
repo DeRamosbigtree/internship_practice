@@ -72,6 +72,7 @@ class DocumentRequestController extends Controller
      */
     public function destroy(DocumentRequest $documentRequest)
     {
-        //
+        $documentRequest->delete();
+        return response()->json(['message' => 'Document request deleted successfully']);
     }
 }
