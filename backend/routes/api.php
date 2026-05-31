@@ -5,3 +5,4 @@ use App\Http\Controllers\DocumentRequestController;
 
 Route::get('/requests', [DocumentRequestController::class, 'index']);
 Route::post('/requests', [DocumentRequestController::class, 'store']);
+Route::put('/requests/{documentRequest}', [DocumentRequestController::class, 'update']);

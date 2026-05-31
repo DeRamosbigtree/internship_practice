@@ -59,7 +59,12 @@ class DocumentRequestController extends Controller
      */
     public function update(Request $request, DocumentRequest $documentRequest)
     {
-        //
+        $validated = $request->validate([
+            'status' => 'required|string|in:pending,approved,rejected',
+        ]);
+
+        $documentRequest->update($validated);
+        return response()->json(['message' => 'Document request updated successfully', 'data' => $documentRequest]);
     }
 
     /**
